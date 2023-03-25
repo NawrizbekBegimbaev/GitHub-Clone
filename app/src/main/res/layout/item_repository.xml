@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingRight="50dp"
+    android:layout_marginVertical="10dp"
+    android:layout_marginHorizontal="10dp"
+    android:paddingBottom="10dp"
+    android:background="@drawable/shape2"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/repo_card"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        app:cardCornerRadius="250dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/repo_image"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/ic_launcher_background" />
+    </androidx.cardview.widget.CardView>
+    <TextView
+        android:id="@+id/username"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+        android:fontFamily="sans-serif"
+        android:text="NawrizbekBegimbaev"
+        android:textColor="#A6A6A6"
+        android:textSize="15sp"
+        app:layout_constraintBottom_toBottomOf="@+id/repo_card"
+        app:layout_constraintStart_toEndOf="@+id/repo_card"
+        app:layout_constraintTop_toTopOf="@+id/repo_card" />
+    <TextView
+        android:id="@+id/repo_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Pinteres-Clone"
+        android:textColor="@color/white"
+        android:layout_marginTop="5dp"
+        android:textSize="17.5dp"
+        app:layout_constraintStart_toStartOf="@+id/repo_card"
+        app:layout_constraintTop_toBottomOf="@+id/repo_card"/>
+    <TextView
+        android:id="@+id/repo_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Last Exam"
+        android:textSize="15dp"
+        android:textColor="@color/white"
+        app:layout_constraintStart_toStartOf="@+id/repo_name"
+        app:layout_constraintTop_toBottomOf="@+id/repo_name"
+        android:layout_marginTop="5dp" />
+    <ImageView
+        android:id="@+id/star"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:src="@drawable/ic_baseline_star_24"
+        app:tint="#F7FF00"
+        app:layout_constraintStart_toStartOf="@+id/repo_title"
+        app:layout_constraintTop_toBottomOf="@+id/repo_title"
+        android:layout_marginTop="20dp"
+        />
+
+    <TextView
+        android:id="@+id/star_num"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="15dp"
+        android:text="0"
+        app:layout_constraintStart_toEndOf="@+id/star"
+        app:layout_constraintTop_toTopOf="@+id/star"
+        app:layout_constraintBottom_toBottomOf="@+id/star"
+        android:textColor="@color/white"
+        android:layout_marginLeft="5dp"/>
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card"
+        android:layout_width="10dp"
+        android:layout_height="10dp"
+        app:cardCornerRadius="250dp"
+        android:layout_marginLeft="10dp"
+        android:backgroundTint="#004288"
+        app:layout_constraintStart_toEndOf="@+id/star_num"
+        app:layout_constraintTop_toTopOf="@+id/star_num"
+        app:layout_constraintBottom_toBottomOf="@+id/star_num"
+        />
+    <TextView
+        android:id="@+id/language"
+        android:layout_width="wrap_content"
+        android:textColor="@color/white"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@+id/card"
+        app:layout_constraintTop_toTopOf="@+id/card"
+        app:layout_constraintBottom_toBottomOf="@+id/card"
+        android:text="Python"
+        android:textSize="10dp"
+        android:layout_marginLeft="10dp"
+
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

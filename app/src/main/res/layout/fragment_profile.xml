@@ -1,0 +1,312 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/black">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/profile"
+        android:paddingBottom="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#17181C"
+        app:layout_constraintTop_toTopOf="parent">
+
+
+        <!-- Profile Image -->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/profile_card"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="40dp"
+            app:cardCornerRadius="250dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/profile_image"
+                android:layout_width="75dp"
+                android:layout_height="75dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/ic_launcher_background" />
+
+
+        </androidx.cardview.widget.CardView>
+        <!-- Profile Name -->
+        <TextView
+            android:id="@+id/profile_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:fontFamily="sans-serif"
+            android:text="NawrizbekBegimbaev"
+            android:textColor="#A6A6A6"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="@+id/profile_card"
+            app:layout_constraintStart_toEndOf="@+id/profile_card"
+            app:layout_constraintTop_toTopOf="@+id/profile_card" />
+        <!-- Profile Followers -->
+        <ImageView
+            android:id="@+id/follow"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginTop="15dp"
+            android:src="@drawable/profile_svgrepo_com"
+            app:layout_constraintStart_toStartOf="@+id/profile_card"
+            app:layout_constraintTop_toBottomOf="@+id/profile_card"
+            app:tint="#A6A6A6" />
+
+        <TextView
+            android:id="@+id/num_follow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="3"
+            android:textColor="@color/white"
+            android:textSize="20dp"
+            android:layout_marginStart="15dp"
+            app:layout_constraintBottom_toBottomOf="@+id/follow"
+            app:layout_constraintStart_toEndOf="@+id/follow"
+            app:layout_constraintTop_toTopOf="@+id/follow" />
+        <TextView
+            android:id="@+id/tv_followers"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="followers"
+            android:textColor="@color/white"
+            android:textSize="15dp"
+            android:layout_marginLeft="10dp"
+            app:layout_constraintBottom_toBottomOf="@+id/num_follow"
+            app:layout_constraintStart_toEndOf="@+id/num_follow"
+            app:layout_constraintTop_toTopOf="@+id/num_follow" />
+        <androidx.cardview.widget.CardView
+            android:id="@+id/dot"
+            android:layout_width="5dp"
+            android:layout_height="5dp"
+            app:cardCornerRadius="250dp"
+            app:layout_constraintStart_toEndOf="@id/tv_followers"
+            app:layout_constraintTop_toTopOf="@+id/tv_followers"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_followers"
+            android:layout_marginLeft="10dp"
+            />
+        <TextView
+            android:id="@+id/num_following"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="3"
+            android:textColor="@color/white"
+            android:textSize="20dp"
+            android:layout_marginStart="10dp"
+            app:layout_constraintBottom_toBottomOf="@+id/dot"
+            app:layout_constraintStart_toEndOf="@+id/dot"
+            app:layout_constraintTop_toTopOf="@+id/dot" />
+        <TextView
+            android:id="@+id/tv_following"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="followers"
+            android:textColor="@color/white"
+            android:textSize="15dp"
+            android:layout_marginLeft="10dp"
+            app:layout_constraintBottom_toBottomOf="@+id/num_following"
+            app:layout_constraintStart_toEndOf="@+id/num_following"
+            app:layout_constraintTop_toTopOf="@+id/num_following" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/repository"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#17181C"
+        android:layout_marginTop="20dp"
+        android:paddingBottom="20dp"
+        app:layout_constraintTop_toBottomOf="@+id/profile"
+        android:paddingTop="10dp">
+        <ImageView
+            android:id="@+id/star_popular"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/star"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginLeft="15dp"
+            app:tint="#9E9D9D" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Popular"
+            android:layout_marginLeft="10dp"
+            app:layout_constraintTop_toTopOf="@+id/star_popular"
+            app:layout_constraintBottom_toBottomOf="@+id/star_popular"
+            app:layout_constraintStart_toEndOf="@+id/star_popular"
+            android:textColor="@color/white"
+            android:textSize="17.5dp"
+            />
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycler_repository"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/star_popular"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="15dp"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            android:orientation="horizontal"
+            tools:listitem="@layout/item_repo"
+            />
+
+
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#17181C"
+        android:paddingBottom="20dp"
+        app:layout_constraintTop_toBottomOf="@+id/repository"
+        android:paddingTop="10dp">
+
+        <!--Repositories-->
+        <LinearLayout
+            android:layout_marginLeft="10dp"
+            android:id="@+id/repologo"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="@drawable/shape"
+            android:backgroundTint="#222222"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="20dp"
+            app:layout_constraintCircleRadius="20dp">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginHorizontal="12.5dp"
+                android:layout_marginVertical="12.5dp"
+                android:src="@drawable/notebook_svgrepo_com"
+                app:tint="#FFFFFF" />
+        </LinearLayout>
+        <TextView
+            android:id="@+id/repo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Repositories"
+            android:textColor="@color/white"
+            app:layout_constraintStart_toEndOf="@+id/repologo"
+            app:layout_constraintTop_toTopOf="@+id/repologo"
+            app:layout_constraintBottom_toBottomOf="@+id/repologo"
+            android:layout_marginLeft="20dp"
+            android:textSize="20dp"/>
+        <TextView
+            android:id="@+id/total_repo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0"
+            android:textSize="30dp"
+            android:textColor="@color/white"
+            android:layout_marginRight="10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/repo"
+            app:layout_constraintBottom_toBottomOf="@+id/repo"
+
+            />
+        <!--Organization-->
+        <LinearLayout
+            android:id="@+id/organlogo"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="@drawable/shape"
+            android:backgroundTint="#BF5C04"
+            app:layout_constraintStart_toStartOf="@+id/repologo"
+            app:layout_constraintTop_toBottomOf="@+id/repologo"
+            android:layout_marginTop="20dp"
+            app:layout_constraintCircleRadius="20dp">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginHorizontal="12.5dp"
+                android:layout_marginVertical="12.5dp"
+                android:src="@drawable/organization"
+                app:tint="#FFFFFF" />
+        </LinearLayout>
+        <TextView
+            android:id="@+id/organ"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Organizations"
+            android:textColor="@color/white"
+            app:layout_constraintStart_toEndOf="@+id/organlogo"
+            app:layout_constraintTop_toTopOf="@+id/organlogo"
+            app:layout_constraintBottom_toBottomOf="@+id/organlogo"
+            android:layout_marginLeft="20dp"
+            android:textSize="20dp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0"
+            android:textSize="30dp"
+            android:textColor="@color/white"
+            android:layout_marginRight="10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/organ"
+            app:layout_constraintBottom_toBottomOf="@+id/organ"
+
+            />
+        <!--Starred-->
+        <LinearLayout
+            android:id="@+id/starlogo"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="@drawable/shape"
+            android:backgroundTint="#BFA604"
+            app:layout_constraintStart_toStartOf="@+id/organlogo"
+            app:layout_constraintTop_toBottomOf="@+id/organlogo"
+            android:layout_marginTop="20dp"
+            app:layout_constraintCircleRadius="20dp">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginHorizontal="12.5dp"
+                android:layout_marginVertical="12.5dp"
+                android:src="@drawable/star"
+                app:tint="#FFFFFF" />
+        </LinearLayout>
+        <TextView
+            android:id="@+id/start"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Starred"
+            android:textColor="@color/white"
+            app:layout_constraintStart_toEndOf="@+id/starlogo"
+            app:layout_constraintTop_toTopOf="@+id/starlogo"
+            app:layout_constraintBottom_toBottomOf="@+id/starlogo"
+            android:layout_marginLeft="20dp"
+            android:textSize="20dp"/>
+        <TextView
+            android:id="@+id/star"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0"
+            android:textSize="30dp"
+            android:textColor="@color/white"
+            android:layout_marginRight="10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/start"
+            app:layout_constraintBottom_toBottomOf="@+id/start"
+
+            />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

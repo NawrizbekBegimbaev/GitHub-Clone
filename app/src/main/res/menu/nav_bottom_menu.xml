@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/homeFragment2"
+        android:icon="@drawable/ic_baseline_home_24"
+        android:title="Home"
+        android:iconTint="@color/white"
+        android:enabled="true"/>
+    <item
+        android:id="@+id/notificationFragment"
+        android:icon="@drawable/ic_baseline_notifications_24"
+        android:title="Notifications"
+        android:iconTint="@color/white"
+        android:enabled="true"/>
+    <item
+        android:id="@+id/exploreFragment"
+        android:icon="@drawable/ic_baseline_explore_24"
+        android:title="Explore"
+        android:iconTint="@color/white"
+        android:enabled="true"/>
+    <item
+        android:id="@+id/profileFragment"
+        android:icon="@drawable/profile_svgrepo_com"
+        android:title="Profile"
+        android:iconTint="@color/white"
+        android:enabled="true"/>
+
+</menu>

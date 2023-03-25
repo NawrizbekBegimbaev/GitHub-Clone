@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <TextView
+        android:id="@+id/tv_home"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/home"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="10dp"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        android:textSize="30sp" />
+
+    <ImageView
+        android:id="@+id/search"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:src="@drawable/ic_baseline_search_24"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"/>
+
+    <TextView
+        android:id="@+id/tv_work"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/my_work"
+        app:layout_constraintStart_toStartOf="@+id/tv_home"
+        app:layout_constraintEnd_toEndOf="@+id/tv_home"
+        app:layout_constraintTop_toBottomOf="@+id/tv_home"
+        android:paddingTop="20dp"
+        android:layout_marginTop="10dp"
+        android:textColor="@color/white"
+        android:textStyle="normal"
+        android:textSize="20sp" />
+    <!--Repositories-->
+    <LinearLayout
+        android:id="@+id/repologo"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:background="@drawable/shape"
+        android:backgroundTint="#222222"
+        app:layout_constraintStart_toStartOf="@+id/dislogo"
+        app:layout_constraintTop_toBottomOf="@+id/dislogo"
+        android:layout_marginTop="20dp"
+        app:layout_constraintCircleRadius="20dp">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginHorizontal="12.5dp"
+            android:layout_marginVertical="12.5dp"
+            android:src="@drawable/notebook_svgrepo_com"
+            app:tint="#FFFFFF" />
+    </LinearLayout>
+    <TextView
+        android:id="@+id/repo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Repositories"
+        android:textColor="@color/white"
+        app:layout_constraintStart_toEndOf="@+id/repologo"
+        app:layout_constraintTop_toTopOf="@+id/repologo"
+        app:layout_constraintBottom_toBottomOf="@+id/repologo"
+        android:layout_marginLeft="20dp"
+        android:textSize="20dp"/>
+    <!--Issues-->
+    <LinearLayout
+        android:id="@+id/islogo"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:background="@drawable/shape"
+        android:backgroundTint="#4BAF02"
+        app:layout_constraintStart_toStartOf="@+id/tv_work"
+        app:layout_constraintTop_toBottomOf="@+id/tv_work"
+        android:layout_marginTop="20dp"
+        app:layout_constraintCircleRadius="20dp">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginHorizontal="12.5dp"
+            android:layout_marginVertical="12.5dp"
+            android:src="@drawable/issues"
+            app:layout_constraintStart_toStartOf="@+id/tv_work"
+            app:tint="#FFFFFF" />
+    </LinearLayout>
+    <TextView
+        android:id="@+id/issues"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Issues"
+        android:textColor="@color/white"
+        app:layout_constraintStart_toEndOf="@+id/islogo"
+        app:layout_constraintTop_toTopOf="@+id/islogo"
+        app:layout_constraintBottom_toBottomOf="@+id/islogo"
+        android:layout_marginLeft="20dp"
+        android:textSize="20dp"/>
+    <!--Pull Requests-->
+    <LinearLayout
+        android:id="@+id/pulogo"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:background="@drawable/shape"
+        android:backgroundTint="#0140AF"
+        app:layout_constraintStart_toStartOf="@+id/islogo"
+        app:layout_constraintTop_toBottomOf="@+id/islogo"
+        android:layout_marginTop="20dp"
+        app:layout_constraintCircleRadius="20dp">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginHorizontal="12.5dp"
+            android:layout_marginVertical="12.5dp"
+            android:src="@drawable/pull"
+            app:tint="#FFFFFF" />
+    </LinearLayout>
+    <TextView
+        android:id="@+id/pull"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Pull Requests"
+        android:textColor="@color/white"
+        app:layout_constraintStart_toEndOf="@+id/pulogo"
+        app:layout_constraintTop_toTopOf="@+id/pulogo"
+        app:layout_constraintBottom_toBottomOf="@+id/pulogo"
+        android:layout_marginLeft="20dp"
+        android:textSize="20dp"/>
+    <!--Disscussion-->
+    <LinearLayout
+        android:id="@+id/dislogo"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:background="@drawable/shape"
+        android:backgroundTint="#4C03C3"
+        app:layout_constraintStart_toStartOf="@+id/pulogo"
+        app:layout_constraintTop_toBottomOf="@+id/pulogo"
+        android:layout_marginTop="20dp"
+        app:layout_constraintCircleRadius="20dp">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginHorizontal="12.5dp"
+            android:layout_marginVertical="12.5dp"
+            android:src="@drawable/discussion"
+            app:tint="#FFFFFF" />
+    </LinearLayout>
+    <TextView
+        android:id="@+id/discus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Duscussions"
+        android:textColor="@color/white"
+        app:layout_constraintStart_toEndOf="@+id/dislogo"
+        app:layout_constraintTop_toTopOf="@+id/dislogo"
+        app:layout_constraintBottom_toBottomOf="@+id/dislogo"
+        android:layout_marginLeft="20dp"
+        android:textSize="20dp"/>
+    <!--Organization-->
+    <LinearLayout
+        android:id="@+id/organlogo"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:background="@drawable/shape"
+        android:backgroundTint="#BF5C04"
+        app:layout_constraintStart_toStartOf="@+id/repologo"
+        app:layout_constraintTop_toBottomOf="@+id/repologo"
+        android:layout_marginTop="20dp"
+        app:layout_constraintCircleRadius="20dp">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginHorizontal="12.5dp"
+            android:layout_marginVertical="12.5dp"
+            android:src="@drawable/organization"
+            app:tint="#FFFFFF" />
+    </LinearLayout>
+    <TextView
+        android:id="@+id/organ"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Organizations"
+        android:textColor="@color/white"
+        app:layout_constraintStart_toEndOf="@+id/organlogo"
+        app:layout_constraintTop_toTopOf="@+id/organlogo"
+        app:layout_constraintBottom_toBottomOf="@+id/organlogo"
+        android:layout_marginLeft="20dp"
+        android:textSize="20dp"/>
+    <!--Starred-->
+    <LinearLayout
+        android:id="@+id/starlogo"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:background="@drawable/shape"
+        android:backgroundTint="#BFA604"
+        app:layout_constraintStart_toStartOf="@+id/organlogo"
+        app:layout_constraintTop_toBottomOf="@+id/organlogo"
+        android:layout_marginTop="20dp"
+        app:layout_constraintCircleRadius="20dp">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginHorizontal="12.5dp"
+            android:layout_marginVertical="12.5dp"
+            android:src="@drawable/star"
+            app:tint="#FFFFFF" />
+    </LinearLayout>
+    <TextView
+        android:id="@+id/star"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Starred"
+        android:textColor="@color/white"
+        app:layout_constraintStart_toEndOf="@+id/starlogo"
+        app:layout_constraintTop_toTopOf="@+id/starlogo"
+        app:layout_constraintBottom_toBottomOf="@+id/starlogo"
+        android:layout_marginLeft="20dp"
+        android:textSize="20dp"/>
+
+
+
+
+    <!--<com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/nav_bottom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:menu="@menu/nav_bottom_menu"
+        app:itemIconTint="@color/item_ground"
+        app:itemTextColor="@color/item_ground"
+        app:itemIconSize="30dp"
+        android:background="@color/black"
+        app:layout_constraintBottom_toBottomOf="parent"/>-->
+</androidx.constraintlayout.widget.ConstraintLayout>
