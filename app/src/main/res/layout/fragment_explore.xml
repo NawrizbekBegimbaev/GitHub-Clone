@@ -2,7 +2,7 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/black"
+    android:background="#FFFFFF"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
 
@@ -17,7 +17,20 @@
         app:layout_constraintTop_toBottomOf="@+id/img"
         android:layout_marginTop="20dp"
 
-        android:textColor="@color/white"/>
+        android:textColor="@color/black"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Explore"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginLeft="20sp"
+        android:layout_marginTop="20sp"
+        android:textColor="@color/black"
+
+        />
     <ImageView
         android:id="@+id/img"
         app:layout_constraintStart_toStartOf="parent"
@@ -28,6 +41,6 @@
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:src="@drawable/broke"
-        app:tint="@color/white" />
+        app:tint="@color/black" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

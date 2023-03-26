@@ -3,9 +3,9 @@ package com.example.github.data.models
 data class SearchByRepositoryResponse(
     val total_count: Int,
     val incomplete_results: Boolean,
-    val items: List<Items>
+    val items: List<Itemss>
 )
-data class Items(
+data class Itemss(
     val id: Int,
     val node_id: String,
     val name: String,

@@ -2,4 +2,6 @@
     <string name="app_name">GitHub</string>
     <string name="home">Home</string>
     <string name="my_work">My Work</string>
+    <string name="repositories_with">Repositories with \"%s\"</string>
+    <string name="users_with">Users with \"%s\"</string>
 </resources>

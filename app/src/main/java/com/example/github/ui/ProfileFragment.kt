@@ -5,6 +5,7 @@ import android.view.View
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
+import androidx.navigation.Navigation
 import androidx.recyclerview.widget.DividerItemDecoration
 import com.example.github.R
 import com.example.github.data.models.GetUserProfileInfoResponse
@@ -41,6 +42,10 @@ class ProfileFragment: Fragment(R.layout.fragment_profile) {
                 repoviewModel.getUserRepo()
                 viewModel.getUserInfo()
             }
+            repo.setOnClickListener {
+                val navController = Navigation.findNavController(requireActivity(),R.id.main_fragment)
+                navController.navigate(MainFragmentDirections.actionMainFragmentToRepositoryFragment())
+            }
         }
 
     }
@@ -55,7 +60,6 @@ class ProfileFragment: Fragment(R.layout.fragment_profile) {
                 numFollow.text = it.followers.toString()
                 numFollowing.text = it.following.toString()
             }
-
         }.launchIn(lifecycleScope)
         repoviewModel.activeInfoFlow.onEach {
             adapter.submitList(it)

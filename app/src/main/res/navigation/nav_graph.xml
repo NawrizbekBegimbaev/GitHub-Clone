@@ -30,6 +30,12 @@
         <action
             android:id="@+id/action_searchFragment_to_mainFragment"
             app:destination="@id/mainFragment" />
+        <action
+            android:id="@+id/action_searchFragment_to_userFragment"
+            app:destination="@id/userFragment" />
+        <action
+            android:id="@+id/action_searchFragment_to_reposFragment"
+            app:destination="@id/reposFragment" />
     </fragment>
     <fragment
         android:id="@+id/repositoryFragment"
@@ -39,4 +45,12 @@
             android:id="@+id/action_repositoryFragment_to_mainFragment"
             app:destination="@id/mainFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/reposFragment"
+        android:name="com.example.github.ui.ReposFragment"
+        android:label="ReposFragment" />
+    <fragment
+        android:id="@+id/userFragment"
+        android:name="com.example.github.ui.UserFragment"
+        android:label="UserFragment" />
 </navigation>

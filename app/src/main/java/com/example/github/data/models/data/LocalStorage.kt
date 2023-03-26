@@ -16,4 +16,5 @@ class LocalStorage() {
     var code by StringPreference(prefs)
     var token by StringPreference(prefs)
     var login by IntPreference(prefs)
+    var search by StringPreference(prefs)
 }

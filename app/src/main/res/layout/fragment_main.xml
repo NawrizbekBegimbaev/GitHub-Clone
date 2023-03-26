@@ -23,7 +23,7 @@
         app:itemIconTint="@color/item_ground"
         app:itemTextColor="@color/item_ground"
         app:itemIconSize="30dp"
-        android:background="@color/black"
+        android:background="#FFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:menu="@menu/nav_bottom_menu" />
 
