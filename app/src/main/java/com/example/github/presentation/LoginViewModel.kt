@@ -2,6 +2,7 @@ package com.example.github.presentation
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.example.github.data.models.LoginResponseData
 import com.example.github.data.models.data.ResultData
 import com.example.github.domain.MainRepository
 import kotlinx.coroutines.flow.MutableSharedFlow
@@ -9,7 +10,7 @@ import kotlinx.coroutines.flow.launchIn
 import kotlinx.coroutines.flow.onEach
 
 class LoginViewModel(private val repo: MainRepository) : ViewModel() {
-    val activeLoginFlow = MutableSharedFlow<String>()
+    val activeLoginFlow = MutableSharedFlow<LoginResponseData>()
     val messageFlow = MutableSharedFlow<String>()
     val errorFlow = MutableSharedFlow<Throwable>()
 

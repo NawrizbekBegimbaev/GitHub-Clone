@@ -10,7 +10,7 @@ class MainRepository(private val api: GitHubApi) {
     suspend fun login() = flow {
         val response = api.login("8f3cf5f09bd0c93a0528", "5447af3efb5afba3751aa6a0025e97affcf1a538", LocalStorage().code)
         if(response.isSuccessful) {
-            emit(ResultData.Success(response.body()!!.access_token))
+            emit(ResultData.Success(response.body()!!))
         }else{
             emit(ResultData.Message(response.message()))
         }

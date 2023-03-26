@@ -3,6 +3,7 @@ package com.example.github.ui
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import android.widget.Toast
 import androidx.fragment.app.Fragment
@@ -24,14 +25,11 @@ class LoginFragment : Fragment(R.layout.fragment_login) {
         super.onViewCreated(view, savedInstanceState)
         binding = FragmentLoginBinding.bind(view)
 
-       if (LocalStorage().login == 1){
+       if (LocalStorage().login >= 1){
            findNavController().navigate(LoginFragmentDirections.actionLoginFragmentToMainFragment())
        }else{
-           initObServers()
 
-           lifecycleScope.launchWhenResumed {
-               viewModel.login()
-           }
+           initObServers()
 
            binding.login.setOnClickListener {
                val intent = Intent(
@@ -47,7 +45,7 @@ class LoginFragment : Fragment(R.layout.fragment_login) {
     private fun initObServers() {
         viewModel.activeLoginFlow.onEach {
             LocalStorage().login = 1
-            LocalStorage().token = it
+            LocalStorage().token = it.access_token
             findNavController().navigate(
                 LoginFragmentDirections.actionLoginFragmentToMainFragment()
             )
@@ -61,7 +59,10 @@ class LoginFragment : Fragment(R.layout.fragment_login) {
         if (uri != null) {
             val code = uri.getQueryParameter("code")
             if (code != null) {
-                LocalStorage().code = code
+                LocalStorage().code = "$code"
+                lifecycleScope.launchWhenResumed {
+                    viewModel.login()
+                }
             } else if ((uri.getQueryParameter("error")) != null) {
                 Toast.makeText(requireContext(), "Something went wrong!", Toast.LENGTH_SHORT).show()
             }
