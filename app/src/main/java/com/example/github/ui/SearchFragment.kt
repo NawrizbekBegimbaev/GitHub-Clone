@@ -4,6 +4,8 @@ import android.os.Bundle
 import android.view.View
 import android.widget.SearchView
 import android.widget.Toast
+import androidx.core.view.isEmpty
+import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.Navigation
@@ -24,6 +26,16 @@ class SearchFragment : Fragment(R.layout.fragment_search) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding = FragmentSearchBinding.bind(view)
+        binding.apply {
+            img1.isVisible = false
+            img1.isClickable = false
+            repo.isClickable = false
+            repo.isVisible = false
+            img2.isVisible = false
+            img2.isClickable = false
+            user.isVisible = false
+            user.isClickable = false
+        }
 
 
         /**val input = binding.etSearch.text.toString()
@@ -48,10 +60,30 @@ class SearchFragment : Fragment(R.layout.fragment_search) {
             }
 
             override fun onQueryTextChange(newText: String?): Boolean {
-                binding.repo.text = String.format(getString(R.string.repositories_with),newText)
-                binding.user.text = String.format(getString(R.string.users_with),newText)
-                LocalStorage().search = newText.toString()
-
+                if(binding.etSearch.isEmpty() || newText == ""){
+                    binding.apply {
+                        img1.isVisible = false
+                        img1.isClickable = false
+                        repo.isClickable = false
+                        repo.isVisible = false
+                        img2.isVisible = false
+                        img2.isClickable = false
+                        user.isVisible = false
+                        user.isClickable = false
+                    }
+                }else{
+                    binding.img1.isVisible = true
+                    binding.img1.isClickable = true
+                    binding.repo.isClickable = true
+                    binding.repo.isVisible = true
+                    binding.img2.isVisible = true
+                    binding.img2.isClickable = true
+                    binding.user.isVisible = true
+                    binding.user.isClickable = true
+                    binding.repo.text = String.format(getString(R.string.repositories_with),newText)
+                    binding.user.text = String.format(getString(R.string.users_with),newText)
+                    LocalStorage().search = newText.toString()
+                }
                 return false
             }
 
